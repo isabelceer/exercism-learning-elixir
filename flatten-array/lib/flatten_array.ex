@@ -15,16 +15,17 @@ defmodule FlattenArray do
   @spec flatten(list) :: list
   def flatten(list),
     do:
-      accumulate_by_prepending(list, [])
+      []
+      |> accumulate_by_prepending(list)
       |> Enum.reverse()
 
-  defp accumulate_by_prepending([], acc), do: acc
-  defp accumulate_by_prepending([nil | tail], acc), do: accumulate_by_prepending(tail, acc)
-  defp accumulate_by_prepending([[] | tail], acc), do: accumulate_by_prepending(tail, acc)
+  defp accumulate_by_prepending(acc, [head | tail]),
+    do:
+      acc
+      |> accumulate_by_prepending(head)
+      |> accumulate_by_prepending(tail)
 
-  defp accumulate_by_prepending([head | tail], acc) when is_list(head),
-    do: accumulate_by_prepending(tail, accumulate_by_prepending(head, acc))
-
-  defp accumulate_by_prepending([head | tail], acc),
-    do: accumulate_by_prepending(tail, [head | acc])
+  defp accumulate_by_prepending(acc, []), do: acc
+  defp accumulate_by_prepending(acc, nil), do: acc
+  defp accumulate_by_prepending(acc, item), do: [item | acc]
 end

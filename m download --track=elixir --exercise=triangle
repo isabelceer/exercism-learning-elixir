@@ -1,0 +1,11 @@
+[33mcommit 9da879ee2a7d1789fb585a8eb3b71a2ce7cbad73[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: isabelceer <izabela.cieslewicz@gmail.com>
+Date:   Thu Dec 7 00:46:04 2023 +0100
+
+    another flatten list solution
+
+[33mcommit e474f91deb85e1c60c2f587b2c29a5ca02553b9e[m
+Author: isabelceer <izabela.cieslewicz@gmail.com>
+Date:   Tue Dec 5 23:04:53 2023 +0100
+
+    my first commit in Elixir track on exercism
