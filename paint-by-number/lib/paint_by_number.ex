@@ -37,7 +37,7 @@ defmodule PaintByNumber do
     palette_bit_size = palette_bit_size(color_count)
 
     case picture do
-      <<pixel::size(palette_bit_size), rest::bitstring>> -> <<rest::bitstring>>
+      <<_pixel::size(palette_bit_size), rest::bitstring>> -> <<rest::bitstring>>
       <<>> -> <<>>
     end
   end
